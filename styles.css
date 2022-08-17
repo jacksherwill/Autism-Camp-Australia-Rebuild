@@ -101,8 +101,6 @@ nav a {
     position: relative;
     display: flex;
     --page-width: 1500px;
-    
-
 }
 
 .headertext {
@@ -240,11 +238,23 @@ ul {
     font-family: 'Open Sans', sans-serif;
 }
 
-.panelrow .line {
+.line {
     border-left: 1px solid red;
 }
 
 .testimonials {
     max-width: var(--page-width);
     margin: 0 auto;
+}
+
+.headerdonate {
+    background-image: url(./IMAGES/donateheader.png);
+    min-height: 70vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    --page-width: 1500px;
+
 }
