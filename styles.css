@@ -6,17 +6,18 @@
 html {
     box-sizing: border-box;
     font-family: 'Open-sans', sans-serif;
+    max-width: var(--page-width);
+    overflow-x: hidden;
 }
-
-section:not(.navbar) {
-    padding-top: 3rem;
-}
-
-
 
 :root {
     --page-width: 1500px;
+    --content-width: 80%;
     --primary-clr: #768DAC;
+    --secondary-clr: #435693;
+    --background-clr: #E6DEDE;
+    --ln: 1px solid #ccc;
+
 }
 
 .logo {
@@ -34,6 +35,15 @@ nav {
     background-color: #F9f9f9;
     box-shadow: 0 20px 30px rgba(0,0,0,0.15);
 }
+
+h2 {
+    font-family: 'open-sans', sans-serif;
+    font-weight: bold;
+    color: var(--secondary-clr);
+    letter-spacing: 3px;
+    padding-bottom: 1rem;
+}
+
 
 nav a {
     text-decoration: none;
@@ -114,60 +124,68 @@ nav a {
     padding-left: 1.5rem;
 }
 
-.main {
-    max-width: var(--page-width);
+.about {
+    max-width: var(--content-width);
     margin: 0 auto;
-    display: flex;
-
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
-.left {
-    flex: 3;
-}
-
-.right {
-    flex: 2;
-    height: 100%;
-    width: 100%;
-}
-
-h2 {
-    color: #435693;
-    letter-spacing: 5px;
-}
-
-p {
-    color: #424242;
-    padding-top: 1rem;
-    line-height: 130%;
+.about p {
+    font-size: 22;
     font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
 }
 
-.quote {
-    background-color: #E6DEDE;
-    font-size: 18px;
-    padding: 2rem;
-    border-radius: 15px 15px 0 0;
-}
-
-.quotename {
-    background-color: #E6DEDE;
-    font-family: 'Loved by the king', cursive;
-    font-size: 35px;
+.call-out {
+    display: flex;
+    padding-top: 2rem;
     padding-left: 2rem;
-    padding-bottom: 2rem;
-    border-radius: 0px 0px 15px 15px;
+    align-items: center;
+    max-width: var(--content-width);
+  }
+  
+.call-out > .body {
+    background-color: var(--background-clr);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 2rem;
+  }
+  
+.call-out > .body > .pic {
+    min-width: 280px;
+    min-height: 280px;
+    background-color: white;
+    border: var(--background-clr);
+    border-radius: 50%;
+    transform: scale(1.5) translateX(20%);
+    background-image: url(./IMAGES/founderimage.png);
+    background-size: cover;
+    max-width: var(--content-width);
+  }
+
+.foundername {
+    font-family: 'Loved by the king', cursive;
+    font-size: 30px;
 }
 
-.right img {
-    height: 400px;
-    width: auto;
-    border-radius: 100%;
+.about .enrol-btn {
+    margin-top: 2rem;
 }
 
 .camps {
-    max-width: var(--page-width);
+    background-color: var(--background-clr);
+    height: 650px;
+}
+
+
+.campscontent {
+    max-width: var(--content-width);
     margin: 0 auto;
+    padding-top: 4rem;
 }
 
 .row {
@@ -175,9 +193,10 @@ p {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    max-width: var(--content-width);
+    margin: 0 auto;
     gap: 1rem;
 }
-
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -185,6 +204,9 @@ p {
     cursor: pointer;
     margin-top: 1rem;
     border-radius: 5px;
+    background-color: white;
+    height: calc(100vh/2.1);
+    text-align: center;
     
 }
 
@@ -212,49 +234,103 @@ p {
     font-size: 25px;
     font-weight: bold;
     padding-bottom: 1.5rem;
-    letter-spacing: 5px;
 }
 
 .outcomes {
-    max-width: var(--page-width);
+    max-width: var(--content-width);
     margin: 0 auto;
+    padding-top: 4rem;
 }
 
-.panelrow {
-    display: flex;
-    justify-content: space-between;
-    align-items:flex-start;
+.outcomes .row {
+    max-width: var(--content-width);
+
 }
 
+.outcomes .subtext {
+    padding-top: 1rem;
+}
+
+.outcomes img {
+    margin-top: 1rem;
+}
+
+.panel img {
+    max-width: 380px;
+}
 
 h3 {
-    color:#435693
+    color: var(--secondary-clr);
 }
 
-ul {
-    color: #483A3B;
-    padding-top: 1rem;
-    line-height: 130%;
-    font-family: 'Open Sans', sans-serif;
+.panel p {
+    padding: 0.2rem;
+    margin-left: 1rem;
 }
 
-.line {
-    border-left: 1px solid red;
+.speech {
+    background-color: #E6DEDE;
+    margin-top: 4rem;
 }
 
-.testimonials {
-    max-width: var(--page-width);
+.speech h2 {
+    max-width: var(--content-width);
     margin: 0 auto;
+    padding-top: 4rem;
 }
 
-.headerdonate {
-    background-image: url(./IMAGES/donateheader.png);
-    min-height: 70vh;
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-    position: relative;
+section.carousel {
+    background-color: #E6DEDE;
+    height: 100px;
     display: flex;
-    --page-width: 1500px;
+    align-items: center;
+    overflow-x: scroll;
+    max-width: 100vw;
+    min-width: 100vw;
+    gap: 3.5rem;
+    position: relative;
+    padding: 8rem;
+    overflow-y: hidden;
+  }
+  
+  section.carousel > h3 {
+    position: absolute;
+    top: 5rem;
+    left: 8rem;
+    
+  }
 
-}
+  .testimonial {
+    height: 156px;
+    min-width: 400px;
+    border: var(--ln);
+    background-color: white;
+    border-radius: 2rem;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .testimonial > .square {
+    background-color: white;
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    bottom: -2%;
+    left: 5%;
+    transform: rotate(45deg);
+  }
+
+
+  .testimonial p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .testquote {
+    font-family: 'Loved by the king', cursive;
+    font-size: 18px;
+  }
