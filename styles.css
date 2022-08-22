@@ -7,7 +7,6 @@ html {
     box-sizing: border-box;
     font-family: 'Open-sans', sans-serif;
     max-width: var(--page-width);
-    overflow-x: hidden;
 }
 
 :root {
@@ -110,18 +109,21 @@ nav a {
     background-size: cover;
     position: relative;
     display: flex;
+    justify-content: flex-start;
     --page-width: 1500px;
 }
 
 .headertext {
     color: white;
     display: flex;
-    justify-content: baseline;
-    align-items:flex-end;
+    align-items: center;
+    justify-content: center;
     font-family: 'Loved by the King', cursive;
-    font-size: 100px;
+    font-size: 80px;
     padding-bottom: 3rem;
     padding-left: 1.5rem;
+    max-width: var(--content-width);
+    margin: 0 auto;
 }
 
 .about {
@@ -303,7 +305,6 @@ section.carousel {
   .testimonial {
     height: 156px;
     min-width: 400px;
-    border: var(--ln);
     background-color: white;
     border-radius: 2rem;
     padding: 2rem;
@@ -334,3 +335,4 @@ section.carousel {
     font-family: 'Loved by the king', cursive;
     font-size: 18px;
   }
+  
